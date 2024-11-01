@@ -1,0 +1,36 @@
+<?php
+$active_theme = SR_MINIFY_HTML::$active_theme;
+?>
+<div class="sr_wrapper">
+    <div class="card hover pointer" title="<?=SR_MINIFY_HTML_TITLE?> - <?=SR_MINIFY_HTML_URL;?>" onclick="window.open('<?=SR_MINIFY_HTML_URL;?>')">
+        <ul class="name">
+            <li>S</li>
+            <li>U</li>
+            <li>P</li>
+            <li>E</li>
+            <li>R</li>
+        </ul>
+        <img src="<?=SR_MINIFY_HTML_PLUGIN_LOGO;?>" class="logo"/>
+        <ul class="name">
+            <li>R</li>
+            <li>I</li>
+            <li>S</li>
+            <li>H</li>
+            <li>I</li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="card hover">
+        <h2><?=SR_MINIFY_HTML_NAME?> (V. <?=SR_MINIFY_HTML_VERSION;?>) - SETTING</h2>
+        <h4>CURRENT ACTIVE THEME: <?= $active_theme->Name; ?></h4>
+        <div class="card-img" style="background-image:url(<?= get_template_directory_uri(); ?>/screenshot.png);">
+            </div>
+
+            <div class="card-content">
+                            <h2><?= $active_theme->Name; ?></h2>
+                            <p><?= $active_theme->Description; ?></p>
+                            <p class="<?= SR_MINIFY_HTML::$minify?'success':'error';?> message"><?= SR_MINIFY_HTML::$minify?'HTML minification enabled':'HTML minification disabled'; ?></p>
+                            <button class="<?= SR_MINIFY_HTML::$minify?'error':'success';?> btn" type="button" onclick="sr_toggle_html_minify('<?=$active_theme->template;?>');"><?= SR_MINIFY_HTML::$minify?'Disable':'Enable';?> HTML Minify</button>
+            </div>
+    </div>
+</div>
